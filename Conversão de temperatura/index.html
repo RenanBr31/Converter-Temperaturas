@@ -1,0 +1,62 @@
+<d?<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor</title>
+</head>
+<body>
+
+ <div class="tela">
+     <p class="texto">Converter Temperaturas</p>
+
+    <div class="fahrenheit">
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Digite aqui"
+        oninput="temperatureConverter(this.value)"
+        onchange="temperatureConverter(this.value)">
+      </p>
+      <p class="titulo">Resultado</p>
+
+      <p>Celsius: <span id="outputCelsius"></span></p>
+
+      <p>Kelvin: <span id="outputKelvin"></span></p>
+
+    </div>
+
+    <div class="celsius">
+        <p>
+            <label>Celsius</label>
+            <input id="inputCelsius" type="number" placeholder="Digite aqui"
+            oninput="temperatureConventer(this.value)"
+            onchange="temperatureConventer(this.value)">
+        </p>
+        <p class="titulo">Resultado</p>
+        <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+
+        <p>Kelvin: <span id="outputkelvin"></span></p>
+
+    </div>
+</div>
+   
+      <script>
+          function temperatureConverter(valNum){
+            valNum = parseFloat(valNum);
+            document.getElementById("outputCelsius").innerHTML = (valNum - 32) / 1.8;
+            document.getElementById("outputKelvin").innerHTML = (valNum  - 32) / 1.8 + 273.15;
+          }
+          
+      </script>
+
+      <script>
+          function temperatureConventer(valNum){
+              valNum = parseFloat(valNum);
+              document.getElementById("outputFahrenheit").innerHTML = (valNum * 1.8) + 32;
+              document.getElementById("outputkelvin").innerHTML = (valNum  + 273.15);
+          }
+      </script>
+
+</body>
+</html>
